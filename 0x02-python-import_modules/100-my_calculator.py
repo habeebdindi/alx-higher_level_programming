@@ -6,26 +6,24 @@ if __name__ == "__main__":
     if n != 4:
         print("{}".format('Usage: ./100-my_calculator.py'
                           ' <a> <operator> <b>'))
-        exit(1)
-        for i in (1, n):
-            fst = sys.argv[1]
-            op = sys.argv[2]
-            scd = sys.argv[3]
-            a = int(fst)
-            b = int(scd)
-            if op != '+' or op != '-' or op != '*' or op != '/':
-                print("{}".format('Unknown operator. Available operators:'
-                                  ' +, -, * and /'))
-                exit(1)
-            elif op == '+':
-                print("{} {} {} = {}".format(fst, op, scd, calc.add(a, b)))
-                exit(0)
-            elif op == '-':
-                print("{} {} {} = {}".format(fst, op, scd, calc.sub(a, b)))
-                exit(0)
-            elif op == '*':
-                print("{} {} {} = {}".format(fst, op, scd, calc.mul(a, b)))
-                exit(0)
-            elif op == '/':
-                print("{} {} {} = {}".format(fst, op, scd, calc.div(a, b)))
-                exit(0)
+        sys.exit(1)
+    a = int(sys.argv[1])
+    op = sys.argv[2]
+    b = int(sys.argv[3])
+    if op == '+':
+            print("{} {} {} = {}".format(a, op, b, calc.add(a, b)))
+            sys.exit(0)
+    elif op == '-':
+            print("{} {} {} = {}".format(a, op, b, calc.sub(a, b)))
+            sys.exit(0)
+    elif op == '*':
+            print("{} {} {} = {}".format(a, op, b, calc.mul(a, b)))
+            exit(0)
+    elif op == '/':
+            print("{} {} {} = {}".format(a, op, b, calc.div(a, b)))
+            exit(0)
+    else:
+          if op != '+' or op != '-' or op != '*' or op != '/':
+              print("{}".format('Unknown operator. Available operator'
+                                ' +, -, * and /'))
+              sys.exit(1) 
