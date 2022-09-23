@@ -5,5 +5,4 @@ if __name__ == "__main__":
     n = len(sys.argv)
     for i in range(1, n):
         sum_arg += int(sys.argv[i])
-        continue
     print("", sum_arg)
