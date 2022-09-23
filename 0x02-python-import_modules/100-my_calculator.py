@@ -11,19 +11,19 @@ if __name__ == "__main__":
     op = sys.argv[2]
     b = int(sys.argv[3])
     if op == '+':
-            print("{} {} {} = {}".format(a, op, b, calc.add(a, b)))
-            sys.exit(0)
+        print("{} {} {} = {}".format(a, op, b, calc.add(a, b)))
+        sys.exit(0)
     elif op == '-':
-            print("{} {} {} = {}".format(a, op, b, calc.sub(a, b)))
-            sys.exit(0)
+        print("{} {} {} = {}".format(a, op, b, calc.sub(a, b)))
+        sys.exit(0)
     elif op == '*':
-            print("{} {} {} = {}".format(a, op, b, calc.mul(a, b)))
-            exit(0)
+        print("{} {} {} = {}".format(a, op, b, calc.mul(a, b)))
+        exit(0)
     elif op == '/':
-            print("{} {} {} = {}".format(a, op, b, calc.div(a, b)))
-            exit(0)
+        print("{} {} {} = {}".format(a, op, b, calc.div(a, b)))
+        exit(0)
     else:
-          if op != '+' or op != '-' or op != '*' or op != '/':
-              print("{}".format('Unknown operator. Available operator'
-                                ' +, -, * and /'))
-              sys.exit(1) 
+        if op != '+' or op != '-' or op != '*' or op != '/':
+            print("{}".format('Unknown operator. Available operator'
+                              ' +, -, * and /'))
+            sys.exit(1)
