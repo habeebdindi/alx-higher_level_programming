@@ -18,12 +18,11 @@ if __name__ == "__main__":
         sys.exit(0)
     elif op == '*':
         print("{} {} {} = {}".format(a, op, b, calc.mul(a, b)))
-        exit(0)
+        sys.exit(0)
     elif op == '/':
         print("{} {} {} = {}".format(a, op, b, calc.div(a, b)))
-        exit(0)
+        sys.exit(0)
     else:
-        if op != '+' or op != '-' or op != '*' or op != '/':
-            print("{}".format('Unknown operator. Available operator'
-                              ' +, -, * and /'))
-            sys.exit(1)
+        print("{}".format('Unknown operator. Available operator'
+                          ' +, -, * and /'))
+        sys.exit(1)
