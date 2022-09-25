@@ -1,6 +1,6 @@
-## THIS DIRECTORY CONTAINS ALL TASKS ON PYTHON MODULES
+## This directory contains all tasks on python modules
 
-### INDIVIDUAL TASK REQUIREMENTS: 
+### Individual task files and their task requirements: 
 
 1. 0-add.py:
 
