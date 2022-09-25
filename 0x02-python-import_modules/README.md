@@ -1,10 +1,12 @@
 ## This directory contains all tasks on python modules
 
-### Individual task files and their task requirements: 
+### Individual task file requirements: 
 
 1. 0-add.py:
 
-    * Write a program that imports the function def add(a, b): from the file add_0.py and prints the result of the addition 1 + 2 = 3
+    * Write a program that imports the function 
+    
+    ```def add(a, b): from the file add_0.py and prints the result of the addition 1 + 2 = 3```
     
     * You have to use print function with string format to display integers
     
