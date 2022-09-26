@@ -8,5 +8,8 @@ def replace_in_list(my_list, idx, element):
         for x in range(len(my_list)):
             if x == idx:
                 for y in my_list:
-                    my_list[x] = element
-                    return my_list
+                    if my_list[x] == element:
+                        return my_list
+                    elif my_list[x] != element:
+                        my_list[x] = element
+                        return my_list
