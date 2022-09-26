@@ -2,21 +2,21 @@
 
 ### Individual task file requirements:
 
-	1. 0-print_list_integer.py:
+1. 0-print_list_integer.py:
 
-		* Write a function that prints all integers of a list.
+	* Write a function that prints all integers of a list.
 
-		* Prototype: def print_list_integer(my_list=[]):
-		
-		* Format: one integer per line. See example
+	* Prototype: def print_list_integer(my_list=[]):
+	
+	* Format: one integer per line. See example
 
-		* You are not allowed to import any module
+	* You are not allowed to import any module
 		
-		* You can assume that the list only contains integers
+	* You can assume that the list only contains integers
 		
-		* You are not allowed to cast integers into strings
+	* You are not allowed to cast integers into strings
 		
-		* You have to use str.format() to print integers
+	* You have to use str.format() to print integers
 
 		~~~
 		guillaume@ubuntu:~/0x03$ cat 0-main.py
