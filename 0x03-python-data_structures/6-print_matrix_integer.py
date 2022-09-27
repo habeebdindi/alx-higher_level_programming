@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    #l1 = [[row[i] for row in matrix] for i in range(3)]
-    for i in matrix:
-        lent = len(i)
-        for i2 in i:
-            print("{}".format(i2))
+    length = len(matrix[0])
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            if j < length - 1:
+                print("{:d}".format(matrix[i][j]), end=" ")
+            else:
+                print("{:d}".format(matrix[i][j]), end="")
+                print()
