@@ -7,3 +7,5 @@
 2. 0x01-python-if_else_loops_functions
 
 3. 0x02-python-import_modules
+
+4. 0x04-python-more_data_structures
