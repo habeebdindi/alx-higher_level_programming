@@ -40,3 +40,9 @@ class Rectangle:
             print("width must be an integer")
         except ValueError:
             print("width must be >= 0")
+    def area(self):
+        """calculating the area and returning it"""
+        return (self.__width * self.__height)
+    def perimeter(self):
+        """calculating the perimeter and returning it"""
+        return (2 * (self.__width + self.__height))
