@@ -38,6 +38,7 @@ class Square:
             int: an integer which is the calculated area
         """
         return self.__size ** 2
+
     @property
     def size(self):
         """
@@ -52,6 +53,7 @@ class Square:
             ValueError: is value is less than 0
         """
         return self.__size
+
     @size.setter
     def size(self, value):
         if not (isinstance(value, int)):
