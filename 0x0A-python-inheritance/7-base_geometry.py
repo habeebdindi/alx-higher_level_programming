@@ -14,7 +14,7 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """ Error handling for non int attributes """
-        if not (isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise TypeError("{} must be an integer".format(name))
