@@ -60,3 +60,13 @@ Testing:
 	Traceback (most recent call last):
 		...
 	OverflowError: cannot convert float infinity to integer
+	>>> add_integer(1, )
+	99
+	>>> add_integer(, 1)
+	Traceback (most recent call last):
+		...
+	SyntaxError: invalid syntax
+	>>> add_integer(2, 1e1000)
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
