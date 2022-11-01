@@ -1,0 +1,51 @@
+The ``add_integer`` module
+==========================
+
+Using ``add_integer``
+---------------------
+
+Importing:
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Testing:
+	
+	>>> add_integer(2, 2)
+	4
+	>>> add_integer(-2, 2)
+	0
+	>>> add_integer(-2, -2)
+	-4
+	>>> add_integer(2.1, 2)
+	4
+	>>> add_integer(-2.1, 2)
+	0
+	>>> add_integer(2.1, 2.1)
+	4
+	>>> add_integer(-2.1, 2.1)
+	0
+	>>> add_integer(2.1, "2")
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+	>>> add_integer(2.1, [1, 2])
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+	>>> add_integer((1, 2), [1, 2])
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+	>>> add_integer((1, 2),)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+	>>> add_integer((1, 2), 2)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+	>>> add_integer(2, (2, 1))
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
