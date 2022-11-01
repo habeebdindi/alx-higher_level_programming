@@ -16,10 +16,6 @@ def add_integer(a, b=98):
     Returns:
         int: returns the integer sum of the two parameters
     """
-    if a+1 == a:
-        raise OverflowError("a too large")
-    if b+1 == b:
-        raise OverflowError("b too large")
     if a is None or type(a) not in [int, float]:
         raise TypeError("a must be an integer")
     if type(b) not in [int, float]:
