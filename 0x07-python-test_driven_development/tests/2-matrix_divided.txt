@@ -1,0 +1,115 @@
+The ``matrix_divided`` module
+=============================
+
+from ``2-matrix_divided``
+----------------------------
+importing the module
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Testing:
+
+warm_up errors:
+
+	matrix_divided(, 2)
+	Traceback (most recent call last):
+		...
+	SyntaxError: invalid syntax
+	>>> matrix_divided()
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+	>>> matrix_divided(1, )
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+	>>> matrix_divided(1, 2)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of                     integers/floats
+	>>> matrix_divided([], 2)
+	Traceback (most recent call last):
+		...
+	IndexError: list index out of range
+	>>> matrix_divided([[]], 2)
+	[[]]
+	>>> matrix_divided([[2]], 2)
+	[[1.0]]
+	>>> matrix_divided([[2], 3], 2)
+	Traceback(most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of                     integers/floats
+	>>> matrix_divided([[2]], [2])
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+	>>> matrix_divided([[2, 5], [6, 6, 2]], [2])
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+	>>> matrix_divided([[2, 5], [6, 6, 2]], 2)
+	Traceback (most recent call last):
+		...
+	TypeError: Each row of the matrix must have the same size
+
+Possible occurences of nan and inf:
+
+	>>> matrix_divided([[2, 5, 1], [6, 6, 2]], 2)
+	[[1.0, 2.5, 0.5], [3.0, 3.0, 1.0]]
+	>>> matrix_divided([[2, 5, 1], [6, 6, 2]], 7)
+	[[0.29, 0.71, 0.14], [0.86, 0.86, 0.29]]
+	>>> matrix_divided([[2, 5, 1e1000], [6, 6, 2]], 7)
+	[[0.29, 0.71, inf], [0.86, 0.86, 0.29]]
+	>>> matrix_divided([[2, 5, 1e1000], [6, 6, 2]], 7e1000)
+	[[0.0, 0.0, nan], [0.0, 0.0, 0.0]]
+	>>> matrix_divided([[2, 5, float('nan')], [6, 6, 2]], 7e1000)
+	[[0.0, 0.0, nan], [0.0, 0.0, 0.0]]
+	>>> matrix_divided([[2, 5, float('inf')], [6, 6, 2]], 7e1000)
+	[[0.0, 0.0, nan], [0.0, 0.0, 0.0]]
+	>>> matrix_divided([[2, 5, -float('inf')], [6, 6, 2]], 7e1000)
+	[[0.0, 0.0, nan], [0.0, 0.0, 0.0]]
+	>>> matrix_divided([[2, 5, -float('inf')], [6, 6, 2]], 7e10000)
+	[[0.0, 0.0, nan], [0.0, 0.0, 0.0]]
+	>>> matrix_divided([[2, 5, -float('inf')], [6, 6, 2]], 7e10000000)
+	[[0.0, 0.0, nan], [0.0, 0.0, 0.0]]
+	>>> matrix_divided([[2, 5, -float('inf')], [6, 6, 2]], 17.42534365)
+	[[0.11, 0.29, -inf], [0.34, 0.34, 0.11]]
+	>>> matrix_divided([[2, 5], [6, 6, 2]], 17.42534365)
+	Traceback (most recent call last):
+		...
+	TypeError: Each row of the matrix must have the same size
+	>>> matrix_divided([[2, 5, ], [6, 6, 2]], 17.42534365)
+	Traceback (most recent call last):
+		...
+	TypeError: Each row of the matrix must have the same size
+	>>> matrix_divided([[2, 5, ], [6, 6, 2]], -17.42534365)
+	Traceback (most recent call last):
+		...
+	TypeError: Each row of the matrix must have the same size
+	>>> matrix_divided([[2, 5, 7], [6, 6, 2]], -17.42534365)
+	[[-0.11, -0.29, -0.4], [-0.34, -0.34, -0.11]]
+	>>> matrix_divided([[2, 5, 7], [6, 6, -2]], -17.42534365)
+	[[-0.11, -0.29, -0.4], [-0.34, -0.34, 0.11]]
+	>>> matrix_divided([[2, 5, 7], [6, 6, -2]], (-17.42534365))
+	[[-0.11, -0.29, -0.4], [-0.34, -0.34, 0.11]]
+	>>> matrix_divided([[2, 5, 7], [6, 6, -2]], (-17.42534365, ))
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+more likely from user:
+
+	>>> matrix_divided([[2, 5, 7], [6, 6, -2]], 33243546576898867543211)
+	[[0.0, 0.0, 0.0], [0.0, 0.0, -0.0]]
+	>>> matrix_divided([[2, 5, (7***3)], [6, 6, -2]], 33)
+	Traceback (most recent call last):
+		...
+	SyntaxError: invalid syntax
+	>>> matrix_divided([[2, 5, (7**3)], [6, 6, -2]], 33)
+	[[0.06, 0.15, 10.39], [0.18, 0.18, -0.06]]
+	>>> matrix_divided([[2, 5, (7/3)], [6, 6, -2]], 33)
+	[[0.06, 0.15, 0.07], [0.18, 0.18, -0.06]]
+	>>> matrix_divided([[2, 5, (7//3)], [6, 6, -2]], 33)
+	[[0.06, 0.15, 0.06], [0.18, 0.18, -0.06]]
+	>>> matrix_divided([[2, 5, (7//3)], [6, 6, -2]], 33)
+	[[0.06, 0.15, 0.06], [0.18, 0.18, -0.06]]
+
