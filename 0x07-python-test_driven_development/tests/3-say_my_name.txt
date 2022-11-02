@@ -1,0 +1,66 @@
+The ``say_my_name`` module
+=============================
+
+from ``3-say_my_name``
+----------------------------
+importing the module:
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Testing:
+
+	>>> say_my_name("Habeeb", "Dindi")
+	My name is Habeeb Dindi
+	>>> say_my_name(1, "Dindi")
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+	>>> say_my_name(1, 2)
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+	>>> say_my_name("Habeeb", 2)
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+	>>> say_my_name("Habeeb", [232, 45])
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+	>>> say_my_name("Habeeb", (1,2))
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+	>>> say_my_name()
+	Traceback (most recent call last):
+		...
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+	>>> say_my_name((123) , )
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+	>>> say_my_name(("djsd ,"dindi" )
+	Traceback (most recent call last):
+		...
+	SyntaxError: invalid syntax
+	>>> say_my_name(("djsd" ,dindi" )
+	Traceback (most recent call last):
+		...
+	SyntaxError: EOL while scanning string literal
+	>>> say_my_name(("djsd" ,dindi")
+	Traceback (most recent call last):
+		...
+	SyntaxError: EOL while scanning string literal
+	>>> say_my_name(("djsd" , dindi")
+	Traceback (most recent call last):
+		...
+	SyntaxError: EOL while scanning string literal
+	>>> say_my_name(("djsd" , "dindi)
+	Traceback (most recent call last):
+		...
+	SyntaxError: EOL while scanning string literal
+	>>> say_my_name(("djsd" ,       )
+	Traceback (most recent call last):
+		...
+	SyntaxError: unexpected EOF while parsing
+
