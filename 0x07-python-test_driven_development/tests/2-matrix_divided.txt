@@ -34,10 +34,6 @@ warm_up errors:
 	[[]]
 	>>> matrix_divided([[2]], 2)
 	[[1.0]]
-	>>> matrix_divided([[2], 3], 2)
-	Traceback(most recent call last):
-		...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
 	>>> matrix_divided([[2]], [2])
 	Traceback (most recent call last):
 		...
