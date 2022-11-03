@@ -41,3 +41,15 @@ class TestMaxInteger(unittest.TestCase):
     def test_one(self):
         """testing one element list"""
         self.assertEqual(max_integer([98]), 98)
+    
+    def test_all_negative(self):
+        """testing all negative elements"""
+        self.assertEqual(max_integer([-1, -2, -3]), -1)
+
+    def test_max_mid(self):
+        """testing for max in the middle"""
+        self.assertEqual(max_integer([1, 3, 2]), 3)
+
+    def test_one_negative(self):
+        """testing for one negative in list"""
+        self.assertEqual(max_integer([1, 2, 6, -4]), 6)
