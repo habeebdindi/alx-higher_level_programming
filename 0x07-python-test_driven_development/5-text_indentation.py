@@ -12,8 +12,9 @@ def text_indentation(text):
     """
     if not type(text) is str:
         raise TypeError("text must be a string")
-    t = text.replace('. ', ".\n\n").replace('? ', "?\n\n").replace(':', ":\n\n")
-    seperated = t.splitlines(True)
+    text = text.replace('? ', "?\n\n").\
+replace(':', ":\n\n").replace('.', ".\n\n")
+    seperated = text.splitlines(True)
     final_text = ""
     for i in seperated:
         final_text += i.strip(' ')
