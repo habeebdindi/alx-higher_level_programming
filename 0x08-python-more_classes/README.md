@@ -1,1 +1,2 @@
-## THIS DIRECTORY CONTAUNS ALL TASKS ON Python - More Classes and Objects
+## THIS DIRECTORY CONTAINS ALL PROJECT TASKS ON Python - More Classes and Objects
+
