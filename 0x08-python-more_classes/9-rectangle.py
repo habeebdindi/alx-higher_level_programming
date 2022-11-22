@@ -123,4 +123,3 @@ class Rectangle:
         """
         new_instance = cls(size, size)
         return new_instance
-
