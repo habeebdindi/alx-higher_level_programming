@@ -1,0 +1,1 @@
+## THIS DIRECTORY CONTAINS ALL PROJECT TASKS ON Python - Everything is object
