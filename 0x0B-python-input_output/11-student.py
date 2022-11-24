@@ -31,7 +31,7 @@ class Student:
 
     def reload_from_json(self, json):
         """
-        Replaces all the attributes of Student instance with the json data packet
+        Replaces all the attributes of Student instance with the json file
         """
         for ki, val in json.items():
             self.__dict__[ki] = val
