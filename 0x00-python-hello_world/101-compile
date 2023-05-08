@@ -1,0 +1,3 @@
+#!/bin/bash
+printf "Compiling main.py ...\n"
+python3 -m py_compile $PYFILE
