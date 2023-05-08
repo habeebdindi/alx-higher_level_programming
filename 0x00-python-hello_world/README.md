@@ -1,0 +1,1 @@
+# This repository contains python and bash scripts performing basic functionalities.
