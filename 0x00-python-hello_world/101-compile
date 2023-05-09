@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-import py_compile
-import os
-print(f"Compiling main.py ...")
-py_compile.compile(os.environ["PYFILE"], cfile=os.environ["PYFILE"] + 'c')
+#!/bin/bash
+printf "Compiling main.py ...\n";
+python3 -m py_compile "$PYFILE";
+mv ./__pycache__/* "${PYFILE}c";
