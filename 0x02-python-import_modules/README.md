@@ -1,9 +1,6 @@
 # This directory contains majorly, python scripts performing simple tasks.
 
-## Below is a list of the files and their descriptions.
-
-#### NOTE ####
-
+## Descriptions
 * The codes are not executed when imported using ```__import__```:
 * Sample inputs and expected outputs have been provided, should you choose to test scripts with your own codes.
 -----
