@@ -7,6 +7,6 @@ if __name__ == "__main__":
     elif (len(sys.argv) == 1):
         print("{:d} arguments.".format(0))
     else:
-        print("{:d} arguments".format(len(sys.argv) - 1))
+        print("{:d} arguments:".format(len(sys.argv) - 1))
         for args in range(1, len(sys.argv)):
             print("{:d}: {}".format(args, sys.argv[args]))
