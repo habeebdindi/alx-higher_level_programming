@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stdio.h>
 /**
  * check_cycle - checks if a list is a cycle.
  * @list: pointer to the head of the list.
@@ -7,21 +7,22 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *temp;
+	listint_t *temp, *check;
 
 	if (!list)
-		return (0);
-	temp = malloc(sizeof(listint_t));
-	if (!temp)
 		return (0);
 	temp = list;
 	temp = temp->next;
 	while (temp != NULL)
 	{
-		if (temp == list)
-			return (1);
+		check = list;
+		while (check->next != temp)
+		{
+			if (temp == check)
+				return (1);
+			check = check->next;
+		}
 		temp = temp->next;
 	}
-	free(temp);
 	return (0);
 }
