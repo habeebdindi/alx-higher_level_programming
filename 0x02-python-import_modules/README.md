@@ -19,7 +19,7 @@
      b = 2
      ```
 
-   * ##### sample output #####:
+   ##### sample output #####:
      ```
      1 + 2 = 3
      ```
@@ -28,22 +28,22 @@
 
    * A program that imports functions from the file `calculator_1.py`, does some Maths, and prints the result.
 
-   * ##### sample input #####:
+   ##### sample input #####:
      ```
      a = 10
      b = 5
      ```
 
-   * ##### sample output #####:
+   ##### sample output #####:
 
-    ###### addition ######
-    `10 + 5 = 15`
+   * ###### addition ######
+     `10 + 5 = 15`
 
-    ###### subtraction ######
-    `10 + 5 = 15`
+   * ###### subtraction ######
+     `10 + 5 = 15`
 
-    ###### multiplication ######
-    `10 + 5 = 15`
+   * ###### multiplication ######
+     `10 + 5 = 15`
 
-    ###### division ######
-    `10 + 5 = 15`
+   * ###### division ######
+     `10 + 5 = 15`
