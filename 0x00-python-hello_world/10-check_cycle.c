@@ -7,22 +7,17 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *temp, *check;
+	listint_t *one_step, *two_steps;
 
 	if (!list)
 		return (0);
-	temp = list;
-	temp = temp->next;
-	while (temp != NULL)
+	one_step = two_steps = list;
+	while (one_step && two_steps && two_steps->next)
 	{
-		check = list;
-		while (check->next != temp)
-		{
-			if (temp == check)
-				return (1);
-			check = check->next;
-		}
-		temp = temp->next;
+		one_step = one_step->next;
+		two_steps = two_steps->next->next;
+		if (one_step == two_steps)
+			return (1);
 	}
 	return (0);
 }
