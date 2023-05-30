@@ -9,13 +9,13 @@ def list_division(my_list_1, my_list_2, list_length):
             if type(my_list_1[i]) in typ and type(my_list_2[i]) in typ:
                 try:
                     new.append(my_list_1[i] / my_list_2[i])
-                except Exception as ze:
+                except (TypeError, ValueError) as ze:
                     new.append(0)
                     print("division by 0")
             else:
                 new.append(0)
                 print("wrong type")
-    except Exception as e:
+    except (TypeError, ValueError) as e:
         pass
     finally:
         return new
