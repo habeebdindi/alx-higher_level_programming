@@ -96,9 +96,9 @@ class Square:
         else:
             for i in range(self.__position[1]):
                 print("")
-                for i2 in range(self.__size):
-                    for x in range(self.__position[0]):
-                        print(" ", end="")
-                    for x2 in range(self.__size):
-                        print("#", end="")
-                    print("")
+            for i2 in range(self.__size):
+                for x in range(self.__position[0]):
+                    print(" ", end="")
+                for x2 in range(self.__size):
+                    print("#", end="")
+                print("")
