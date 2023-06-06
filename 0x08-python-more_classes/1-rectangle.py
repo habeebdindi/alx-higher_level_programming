@@ -1,10 +1,16 @@
 #!/usr/bin/python3
+"""
+Module Contains a Rectangle class
+"""
+
 
 class Rectangle:
     """
+    This class defines a rectangle
     """
     def __init__(self, width=0, height=0):
         """
+        Initialisation method
         """
         if type(width) is not int or type(height) is not int:
             raise TypeError("width must be an integer")
@@ -17,12 +23,14 @@ class Rectangle:
     @property
     def width(self):
         """
+        Getter method
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
+        Setter method
         """
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -34,12 +42,14 @@ class Rectangle:
     @property
     def height(self):
         """
+        Getter method
         """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
+        Setter method
         """
         if type(value) is not int:
             raise TypeError("height must be an integer")
