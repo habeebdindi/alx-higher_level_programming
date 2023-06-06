@@ -2,17 +2,23 @@
 
 class Rectangle:
     """
+    ...
     """
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """
+        ...
         """
-        if type(width) is not int or type(height) is not int:
+        if type(width) is not int:
             raise TypeError("width must be an integer")
-        if width < 0 or height < 0:
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        if width < 0:
             raise ValueError("width must be >= 0")
+        if height < 0:
+            raise ValueError("height must be >= 0")
 
         self.__width = width
         self.__height = height
@@ -22,12 +28,14 @@ class Rectangle:
     @property
     def width(self):
         """
+        ...
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
+        ...
         """
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -39,12 +47,14 @@ class Rectangle:
     @property
     def height(self):
         """
+        ...
         """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
+        ...
         """
         if type(value) is not int:
             raise TypeError("height must be an integer")
@@ -54,11 +64,13 @@ class Rectangle:
 
     def area(self):
         """
+        ...
         """
         return self.__height * self.__width
 
     def perimeter(self):
         """
+        ...
         """
         if self.__width == 0 or self.__height == 0:
             return 0
@@ -66,6 +78,7 @@ class Rectangle:
 
     def __str__(self):
         """
+        ...
         """
         if self.__width == 0 or self.__height == 0:
             return ""
@@ -76,11 +89,13 @@ class Rectangle:
 
     def __repr__(self):
         """
+        ...
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
         """
+        ...
         """
         print("Bye rectangle...")
 
@@ -89,6 +104,7 @@ class Rectangle:
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
+        ...
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
@@ -101,5 +117,6 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """
+        ...
         """
         return cls(size, size)
