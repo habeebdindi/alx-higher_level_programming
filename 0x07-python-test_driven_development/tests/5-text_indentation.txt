@@ -88,3 +88,16 @@ TypeError: text must be a string
 dafsvfdg.
 
 
+>>> text_indentation(".ewrfsd")
+.
+
+ewrfsd
+
+
+>>> text_indentation(".ewrfsd..")
+.
+
+ewrfsd.
+
+.
+
