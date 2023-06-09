@@ -13,5 +13,6 @@ class LockedClass:
         sets an instance attribute if only it's name is first_name
         """
         if not hasattr(self, name) and name != "first_name":
-            raise AttributeError
+            raise AttributeError("'LockedClass' object has no attribute '{}'".
+                                 format(name))
         super().__setattr__(name, value)
