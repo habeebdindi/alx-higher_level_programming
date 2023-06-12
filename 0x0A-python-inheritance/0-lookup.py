@@ -8,7 +8,4 @@ def lookup(obj):
     """
     Returns obj's dicts
     """
-    my_l = []
-    for i in obj.__dict__:
-        my_l.append(i)
-    return my_l
+    return [attr for attr in dir(obj)]
