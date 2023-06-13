@@ -15,4 +15,5 @@ if os.path.exists("add_item.json"):
 
 save_to_json_file(my_list, "add_item.json")
 
+final += list(load_from_json_file("add_item.json"))
 save_to_json_file(final, "add_item.json")
