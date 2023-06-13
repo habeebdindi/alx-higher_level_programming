@@ -1,0 +1,44 @@
+Doctests for module ``1-my_list.py``
+
+===================================
+
+
+Import:
+
+>>> MyList = __import__('1-my_list').MyList
+
+
+Testing:
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+>>> my_list.append(3.6)
+>>> my_list.print_sorted()
+[1, 2, 3, 3.6, 4, 5]
+
+>>> my_list.remove(3)
+>>> my_list.print_sorted()
+[1, 2, 3.6, 4, 5]
+
+>>> my_list.append("Hi")
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/alx-higher_level_programming/0x0A-python-inheritance/1-my_list.py", line 11, in print_sorted
+    print(sorted(self))
+TypeError: '<' not supported between instances of 'str' and 'float'
+
+>>> my_list.append([1, 2, 5])
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/vagrant/alx-higher_level_programming/0x0A-python-inheritance/1-my_list.py", line 11, in print_sorted
+    print(sorted(self))
+TypeError: '<' not supported between instances of 'str' and 'float'
