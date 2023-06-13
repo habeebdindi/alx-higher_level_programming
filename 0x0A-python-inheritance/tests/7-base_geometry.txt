@@ -134,3 +134,23 @@ Traceback (most recent call last):
   File "/home/vagrant/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 22, in integer_validator
     raise TypeError("{} must be an integer".format(name))
 TypeError: Habeeb must be an integer
+
+>>> bg.integer_validator("", 90)
+
+>>> g = __import__("7-base_geometry").__doc__
+>>> len(g) > 1
+True
+>>> g = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(g) > 1
+True
+>>> g = __import__("7-base_geometry").BaseGeometry.area.__doc__
+>>> len(g) > 1
+True
+>>> g = __import__("7-base_geometry").BaseGeometry.__init__.__doc__
+>>> len(g) > 1
+True
+
+>>> g = __import__("7-base_geometry").BaseGeometry.integer_validator.
+__doc__
+>>> len(g) > 1
+True
