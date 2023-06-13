@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 """
+Module contains a class that inherits from a baseclasee
 """
 
 
 class Rectangle(BaseGeometry):
     """
+    Class contains one module
     """
     def __init__(self, width, height):
         """
