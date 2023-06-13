@@ -150,7 +150,6 @@ True
 >>> len(g) > 1
 True
 
->>> g = __import__("7-base_geometry").BaseGeometry.integer_validator.
-__doc__
+>>> g = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
 >>> len(g) > 1
 True
