@@ -27,8 +27,9 @@ try:
                 if status_counts[code] != 0:
                     print("{}: {}".format(code, status_counts[code]))
 
-except KeyboardInterrupt:
+except KeyboardInterrupt as e:
     print("File size: {}".format(sum_size))
     for code in sorted(status_counts):
         if status_counts[code] != 0:
             print("{}: {}".format(code, status_counts[code]))
+    print(e)
