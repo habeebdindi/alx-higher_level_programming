@@ -65,7 +65,10 @@ class Base:
     def create(cls, **dictionary):
         """Returns an instance with all attributes already set.
         """
-        dummy = cls(1, 3)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        else:
+            dummy = cls(1, 3)
         dummy.update(**dictionary)
         return dummy
 
