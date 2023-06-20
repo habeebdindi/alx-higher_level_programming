@@ -1,4 +1,4 @@
-#!/usr/python3
+#!/bin/usr/python3
 """This module contains a class that subclasses `Base`.
 """
 from models.base import Base
