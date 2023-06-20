@@ -32,7 +32,7 @@ class Base:
             list_dictionaries(:obj:`list` of `dicts`): list of dictionaries
         """
         if list_dictionaries is None or len(list_dictionaries) <= 0:
-            return []
+            return str([])
         return json.dumps(list_dictionaries)
 
     @classmethod
