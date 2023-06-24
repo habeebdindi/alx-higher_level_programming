@@ -3,6 +3,8 @@
 """
 import json
 import os
+import turtle
+import tkinter
 
 
 class Base:
@@ -81,9 +83,80 @@ class Base:
             return []
         with open(f, 'r') as fil:
             json_data = fil.read()
-        data_list = cls.from_json_string(json_data)
+            data_list = cls.from_json_string(json_data)
         instance_list = []
         for data in data_list:
             instance = cls.create(**data)
             instance_list.append(instance)
         return instance_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Writes JSON string representation of list_objs to csv file
+        """
+        if list_objs is None or len(list_objs) <= 0:
+            with open("{}.csv".format(cls.__name__), mode='w') as f:
+                f.write(str([]))
+        else:
+            list_dict = [obj.to_dictionary() for obj in list_objs]
+            csv_form = ""
+            for dict_ in list_dict:
+                for key, value in dict_.items():
+                    csv_form += str(value)
+                    if list(dict_).index(key) != len(list(dict_)) - 1:
+                        csv_form += ","
+                csv_form += "\n"
+            with open("{}.csv".format(cls.__name__), mode='w') as f2:
+                f2.write(csv_form)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads JSON from file
+        """
+        f = cls.__name__ + ".csv"
+        if not os.path.exists(f):
+            return []
+        csv = ["id", "width", "height", "x", "y"]
+        csv2 = ["id", "size", "x", "y"]
+        with open(f, 'r') as fil:
+            json_data = fil.readlines()
+            dict_list = []
+            for line in json_data:
+                dict_ = {}
+                li = line.strip().split(",")
+                if (cls.__name__ == "Rectangle"):
+                    dict_ = {csv[i]: int(li[i]) for i in range(len(csv))}
+                else:
+                    dict_ = {csv2[i]: int(li[i]) for i in range(len(csv2))}
+                dict_list.append(dict_)
+        instance_list = []
+        for data in dict_list:
+            instance = cls.create(**data)
+            instance_list.append(instance)
+        return instance_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draws a rectangle or a class
+        """
+        line = turtle.Turtle()
+
+        for Rectangle in list_rectangles:
+            if Rectangle.x:
+                line.setx(Rectangle.x)
+            if Rectangle.y:
+                line.sety(Rectangle.y)
+            for _ in range(2):
+                line.forward(Rectangle.height)
+                line.right(90)
+                line.forward(Rectangle.width)
+                line.right(90)
+
+        for Square in list_squares:
+            if Square.x:
+                line.setx(Square.x)
+            if Square.y:
+                line.sety(Square.y)
+            for _ in range(4):
+                line.forward(Square.size)
+                line.right(90)
