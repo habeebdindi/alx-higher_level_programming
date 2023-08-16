@@ -1,12 +1,13 @@
 #!/usr/bin/node
 
 class Rectangle {
-  constructer (w, h) {
-    if (w < 1 && h < 1) {
-      return this;
+  constructor (w, h) {
+    if (w > 0 && h > 0) {
+      this.width = w;
+      this.height = h;
+    } else {
+      return {};
     }
-    this.width = w;
-    this.height = h;
   }
 }
 
