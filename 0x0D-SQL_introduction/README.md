@@ -1,0 +1,1 @@
+# This directory contains files with certain SQL queries.
