@@ -24,7 +24,7 @@ def main():
         db=database,
         charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE NAME LIKE %s", (match + '%',))
+    cur.execute("SELECT * FROM states WHERE BINARY name LIKE %s", (match + '%',))
     rows = cur.fetchall()
     for row in rows:
         print(row)
