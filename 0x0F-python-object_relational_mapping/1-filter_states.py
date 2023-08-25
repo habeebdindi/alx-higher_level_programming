@@ -22,7 +22,7 @@ def main():
         db=database,
         charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE NAME LIKE 'N%'")
+    cur.execute("SELECT * FROM states WHERE NAME LIKE 'N%' ORDER BY id ASC")
     rows = cur.fetchall()
     for row in rows:
         print(row)

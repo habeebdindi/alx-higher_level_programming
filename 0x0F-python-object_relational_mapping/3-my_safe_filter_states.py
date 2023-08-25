@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """
+SQL INJECTION PROTECTED SCRIPT
 Script lists state that that matches a string from the db hbtn_0e_0_usa
 """
 import MySQLdb
