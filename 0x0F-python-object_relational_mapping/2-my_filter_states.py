@@ -23,7 +23,7 @@ def main():
         db=database,
         charset="utf8")
     cur = conn.cursor()
-    query = "SELECT * FROM states WHERE name \
+    query = "SELECT * FROM states WHERE BINARY name \
             LIKE '{}%' ORDER BY id ASC".format(match)
     cur.execute(query)
     rows = cur.fetchall()
