@@ -7,8 +7,9 @@ from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 
-engine = create_engine('mysql+mysqldb://root:root@localhost:3306/ \
-                      hbtn_0e_6_usa')
+engine = create_engine(
+    'mysql+mysqldb://root:khalEXX001$@localhost:3306/hbtn_0e_4_usa')
+connection = engine.connect()
 Base = declarative_base()
 
 
