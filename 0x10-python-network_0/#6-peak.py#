@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+"""
+contains a funct
+"""
+
+
+def find_peak(arr):
+    """
+    Function finds peak
+    """
+    n = len(arr)
+    for i in range(n):
+        if arr[i] > 
+    return None  # No peak found
