@@ -5,11 +5,12 @@ value of the X-Request-Id variable found in the header of the response.
 """
 
 
-import sys
-import urllib.request
+if __name__ == "__main__":
+    import sys
+    import urllib.request
 
-url = sys.argv[1]
-req = urllib.request.Request(url)
-with urllib.request.urlopen(req) as response:
-    returned = response.headers
-print(returned.get("X-Request-Id"))
+    url = sys.argv[1]
+    req = urllib.request.Request(url)
+    with urllib.request.urlopen(req) as response:
+        returned = response.headers
+    print(returned.get("X-Request-Id"))
