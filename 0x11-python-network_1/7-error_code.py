@@ -10,7 +10,7 @@ if __name__ == "__main__":
     import sys
 
     url = sys.argv[1]
-    retrieved = requests.post(url)
+    retrieved = requests.get(url)
     if retrieved.status_code >= 400:
         print("Error code: {}".format(retrieved.status_code))
     else:
