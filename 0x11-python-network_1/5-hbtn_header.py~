@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Python script that fetches a url and prints a specific header value
+Python script that fetches https://alx-intranet.hbtn.io/status
 """
 
 
@@ -12,3 +12,4 @@ if __name__ == "__main__":
     retrieved = requests.get(url)
     retrieved = retrieved.headers
     print(retrieved.get("X-Request-Id"))
+    
