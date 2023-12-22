@@ -1,35 +1,42 @@
 #!/usr/bin/python3
-"""
-compute metrics
-"""
+"""Log Parsing"""
 import sys
 
 
-codes = ["200", "301", "400", "401", "403", "404", "405", "500"]
-count = 0
-sum_size = 0
-status_counts = {code: 0 for code in codes}
+codes = [200, 301, 400, 401, 403, 404, 405, 500]
+count = {k: 0 for k in codes}
+loops = total = 0
+
+
+def print_codes(codes, file_size):
+    ''' Print all status codes generated so far '''
+    print("File size: {}".format(total))
+    for code in sorted(count):
+        if count[code] != 0:
+            print("{}: {}".format(code, count[code]))
+
 
 try:
     for line in sys.stdin:
-        count += 1
-        line = line.strip()
-        words = line.split()
-        sum_size += int(words[8])
+        loops += 1
 
-        status_code = words[7]
-        if status_code in codes:
-            status_counts[status_code] += 1
+        split = line.split()
+        if len(split) != 9:
+            continue
+        if len(split[0].split(".")) != 4:
+            continue
 
-        if count % 10 == 0:
-            print("File size: {}".format(sum_size))
-            for code in sorted(status_counts):
-                if status_counts[code] != 0:
-                    print("{}: {}".format(code, status_counts[code]))
+        status = int(split[7])
+        if status in codes:
+            count[status] += 1
 
-except KeyboardInterrupt as e:
-    print("File size: {}".format(sum_size))
-    for code in sorted(status_counts):
-        if status_counts[code] != 0:
-            print("{}: {}".format(code, status_counts[code]))
+        total += int(split[8])
+
+        if loops == 10:
+            loops = 0
+            print_codes(count, total)
+except (KeyboardInterrupt, TypeError) as e:
+    print_codes(count, total)
     print(e)
+
+print_codes(count, total)
